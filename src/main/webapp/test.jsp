@@ -7,12 +7,15 @@
 <title>Tacs web application</title>
 <script type="text/javascript" src="resources/js/jquery-1.5.1.min.js"></script>
 <script type="text/javascript" src="resources/js/test.js"></script>
-
+<script>
+	$(document).ready(function(){
+		alert("${sites}");
+	});
+</script>
 </head>
 <body>
-	<a href="" id="linkAgregar" onclick="showHide();return false;">Click</a>
-	<div id="hidden" style="display:block;">
-		Texto oculto
-	</div>
+
+	${sites}
+
 </body>
 </html>
