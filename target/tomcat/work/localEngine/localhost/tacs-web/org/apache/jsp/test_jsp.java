@@ -59,14 +59,29 @@ public final class test_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<script type=\"text/javascript\" src=\"resources/js/jquery-1.5.1.min.js\"></script>\n");
       out.write("<script type=\"text/javascript\" src=\"resources/js/test.js\"></script>\n");
       out.write("\n");
+      out.write("<script>\n");
+      out.write("\t$(document).ready(function(){\n");
+      out.write("\t\tvar sites = eval('");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${sites}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("');\n");
+      out.write("\t\tfor(var i in sites){\n");
+      out.write("\t\t\t$(\"#sitesTable\").append('<tr><td>' + eval(sites[i]).id + \n");
+      out.write("\t\t\t\t\t'</td><td>' + eval(sites[i]).name + \"</td></tr>\");\n");
+      out.write("\t\t}\n");
+      out.write("\t});\n");
+      out.write("</script>\n");
       out.write("</head>\n");
+      out.write("\n");
       out.write("<body>\n");
-      out.write("\t<a href=\"\" id=\"linkAgregar\" onclick=\"showHide();return false;\">Click</a>\n");
-      out.write("\t<div id=\"hidden\" style=\"display:block;\">\n");
-      out.write("\t\tTexto oculto\n");
-      out.write("\t</div>\n");
+      out.write("\t<h1>Sites de Mercado Libre</h1>\n");
+      out.write("\t<table id=\"sitesTable\" border=\"1px;\">\n");
+      out.write("\t\t<tr style=\"background: blue;color:white;\">\n");
+      out.write("\t\t\t<td>Id</td>\n");
+      out.write("\t\t\t<td>Nombre</td>\t\t\n");
+      out.write("\t\t</tr>\n");
+      out.write("\t</table>\n");
       out.write("</body>\n");
-      out.write("</html>\n");
+      out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

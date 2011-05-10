@@ -11,18 +11,31 @@ public class MercadoLibreService {
 
 	private static final String MERCADO_LIBRE_SITES_URL = "https://api.mercadolibre.com/sites/";
 	
+	private RestConsumer consumer;
+	
+	public MercadoLibreService() {
+		consumer = new RestConsumer();
+	}
+	
 	/**
-	 * retorna los sites de mercado libre en los distintos paises
+	 * retorna los sites de mercado libre de los distintos paises
 	 * @return
 	 */
 	public String getMercadoLibreSites(){
 		String entityString = "";
-		RestConsumer consumer = new RestConsumer();
 		HttpEntity entity = consumer.consume(MERCADO_LIBRE_SITES_URL);
 		if(entity != null){
 			entityString = consumer.parseHTTPEntity(entity);
 		}
 		return entityString;
+	}
+	
+	protected void setConsumer(RestConsumer consumer) {
+		this.consumer = consumer;
+	}
+	
+	protected RestConsumer getConsumer() {
+		return consumer;
 	}
 	
 }

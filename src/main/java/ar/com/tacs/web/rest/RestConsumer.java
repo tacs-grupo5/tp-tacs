@@ -20,6 +20,11 @@ public class RestConsumer {
 		client = new DefaultHttpClient();
 	}
 
+	/**
+	 * consume un servicio rest con la url dada
+	 * @param url
+	 * @return
+	 */
 	public HttpEntity consume(String url){
 		HttpGet get = new HttpGet(url);
 		HttpResponse response = null;
@@ -32,6 +37,11 @@ public class RestConsumer {
 		
 	}
 
+	/**
+	 * Parsea el resultado de un pedido rest y lo devuelve como String
+	 * @param entity
+	 * @return
+	 */
 	public String parseHTTPEntity(HttpEntity entity) {
 		if (entity != null) {
 		    long len = entity.getContentLength();

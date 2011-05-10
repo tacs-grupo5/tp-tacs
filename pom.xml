@@ -14,7 +14,7 @@
 				<version>1.1</version>
 			</plugin>
 		</plugins>
-</build>
+  </build>
   <dependencies>
   	<dependency>
   		<groupId>javax.servlet</groupId>
@@ -29,6 +29,26 @@
   		<version>4.1.1</version>
   		<type>jar</type>
   		<scope>compile</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.8.2</version>
+  		<type>jar</type>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>easymock</groupId>
+  		<artifactId>easymock</artifactId>
+  		<version>2.0</version>
+  		<type>jar</type>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>easymock</groupId>
+  		<artifactId>easymockclassextension</artifactId>
+  		<version>2.2</version>
+  		<scope>test</scope>
   	</dependency>
   </dependencies>
   
