@@ -1,4 +1,4 @@
-package ar.com.tacs.web.test;
+package ar.com.tacs.web.servlet;
 
 import java.io.IOException;
 
@@ -10,16 +10,17 @@ import javax.servlet.http.HttpServletResponse;
 import ar.com.tacs.web.rest.MercadoLibreService;
 
 /**
- * Servlet implementation class TestServlet
+ * Servlet encargado de consultar el servicio de mercado libre y 
+ * forwadear los sites a una jsp.
  */
-public class TestServlet extends HttpServlet {
+public class SitesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
     /**
      * Default constructor. 
      */
-    public TestServlet() {
+    public SitesServlet() {
         // TODO Auto-generated constructor stub
     }
 
@@ -30,7 +31,7 @@ public class TestServlet extends HttpServlet {
 		MercadoLibreService service = new MercadoLibreService();
 		String sites = service.getMercadoLibreSites();
 		request.setAttribute("sites", sites);
-		getServletConfig().getServletContext().getRequestDispatcher("/test.jsp").forward(request, response);
+		getServletConfig().getServletContext().getRequestDispatcher("/mercadoLibreSites.jsp").forward(request, response);
 		
 	}
 

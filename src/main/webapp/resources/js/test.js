@@ -1,7 +1,0 @@
-/**
- * 
- */
-
-function showHide(){
-	$("#hidden").toggle();
-}

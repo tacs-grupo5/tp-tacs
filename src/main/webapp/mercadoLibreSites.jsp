@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-script-type" content="text/javascript">
 <title>Tacs web application</title>
 <script type="text/javascript" src="resources/js/jquery-1.5.1.min.js"></script>
-<script type="text/javascript" src="resources/js/test.js"></script>
 
 <script>
 	$(document).ready(function(){
@@ -20,6 +20,7 @@
 </head>
 
 <body>
+	<h1>Sites de Mercado Libre</h1>
 	<table id="sitesTable" border="1px;">
 		<tr style="background: blue;color:white;">
 			<td>Id</td>
