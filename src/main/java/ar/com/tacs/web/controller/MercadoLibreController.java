@@ -17,7 +17,7 @@ public class MercadoLibreController {
 	
 	private MercadoLibreService mercadoLibreService = new MercadoLibreService();
 	
-	@RequestMapping(value="/sites")
+	@RequestMapping(value="/")
 	public String getMercadoLibreSitesPage(ModelMap modelMap){
 		modelMap.addAttribute("sites", mercadoLibreService.getMercadoLibreSites());
 		return MERCADO_LIBRE_SITES_PAGE;

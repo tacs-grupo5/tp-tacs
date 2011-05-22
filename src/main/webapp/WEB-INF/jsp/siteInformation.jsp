@@ -9,19 +9,20 @@
 <script type="text/javascript" src="${resourcesUrl}/js/jquery-1.5.1.min.js"></script>
 <script type="text/javascript" src="${resourcesUrl}/js/utils.js"></script>
 <script type="text/javascript" src="${resourcesUrl}/js/siteInformation.js"></script>
+<link rel="stylesheet" href="${resourcesUrl}/css/estilos.css" />
 
 <title>Insert title here</title>
 </head>
 <body>
 	<input type="hidden" id="categoryInfoUrl" value='<spring:url value="/categories/" />' />
+	<input type="hidden" id="sitesUrl" value='<spring:url value="/" />' />
 	<input type="hidden" id="siteInfo" value='${siteInfo}' />
+	
 	<h1 id="title"></h1>
+	<a href="" id="backLink"></a>
 	<table id="siteInfoTable">
 		<tr>
-			<td>Categorias</td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<th>Categorias</th>			
 		</tr>
 	</table>
 	

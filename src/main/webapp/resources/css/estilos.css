@@ -1,0 +1,19 @@
+table th{
+	background-color: blue;
+	font-size: 16px;
+	font-weight: bolder;
+	color: white;
+	border: 1px;
+	border-color: black;
+	border-style: solid;
+	border-collapse: collapse;
+	padding: 15px;
+}
+table td{
+	border: 1px;
+	border-color: black;
+	border-style: solid;
+	border-collapse: collapse;
+	padding: 5px;
+	
+}

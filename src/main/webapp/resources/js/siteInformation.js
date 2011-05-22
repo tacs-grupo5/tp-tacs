@@ -6,8 +6,14 @@
 $(document).ready(function(){
 	var infoSite = $.parseJSON($("#siteInfo").val());
 	setTitle("Categorias del sitio: " + infoSite.name);
+	setBackLink();
 	createSiteInfoTable(infoSite);			
 });
+
+function setBackLink(){
+	$("#backLink").html("Volver");
+	$("#backLink").attr("href", $("#sitesUrl").val());
+}
 
 function createSiteInfoTable(infoSite){
 	
@@ -15,9 +21,8 @@ function createSiteInfoTable(infoSite){
 		var categoriesColumn = infoSite.categories[i].name + ", ";
 		
 		var url = $("#categoryInfoUrl").val() + infoSite.categories[i].id;
-		
 		var link = getLinkForUrl(url, infoSite.categories[i].name);
-		$("#siteInfoTable").append('<tr>' + createColumn(link) + '</tr>');
+		appendRowToTable($("#siteInfoTable"), createColumn(link));	
 	}
 	
 	

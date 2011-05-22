@@ -10,27 +10,19 @@
 <spring:url value="/resources" var="resourcesUrl" />
 <script type="text/javascript" src="${resourcesUrl}/js/jquery-1.5.1.min.js"></script>
 <script type="text/javascript" src="${resourcesUrl}/js/utils.js"></script>
+<script type="text/javascript" src="${resourcesUrl}/js/mercadoLibreSites.js"></script>
+<link rel="stylesheet" href="${resourcesUrl}/css/estilos.css" />
 
-<script>
-	$(document).ready(function(){
-		var sites = eval('${sites}');
-		for(var i in sites){
-			var idColumn = createColumn(eval(sites[i]).id);
-			var nameColumn = createColumn(getLinkForUrl('<spring:url value="/site/' + eval(sites[i]).id +'"/>', eval(sites[i]).name));
-			$("#sitesTable").append('<tr>' + idColumn + nameColumn + '</tr>');
-		}
-	});
-	
-	
-</script>
 </head>
 
 <body>
-	<h1>Sites de Mercado Libre</h1>
-	<table id="sitesTable" border="1px;">
-		<tr style="background: blue;color:white;">
-			<td>Id</td>
-			<td>Nombre</td>		
+	<input type="hidden" id="siteUrl" value='<spring:url value="/site/" />' />
+	<input type="hidden" id="sitesInfo" value='${sites}' />
+	<h1 id="title"></h1>
+	<table id="sitesTable">
+		<tr>
+			<th>Id</th>
+			<th>Nombre</th>		
 		</tr>
 	</table>
 </body>
