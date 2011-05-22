@@ -5,7 +5,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import ar.com.tacs.web.rest.MercadoLibreService;
+import ar.com.tacs.web.service.MercadoLibreService;
 
 @Controller
 @RequestMapping(value="/")
@@ -37,4 +37,7 @@ public class MercadoLibreController {
 		return CATEGORY_PAGE;
 	}
 	
+	void setMercadoLibreService(MercadoLibreService mercadoLibreService) {
+		this.mercadoLibreService = mercadoLibreService;
+	}		
 }

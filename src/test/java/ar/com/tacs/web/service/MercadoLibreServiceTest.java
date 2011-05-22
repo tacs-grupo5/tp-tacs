@@ -1,4 +1,4 @@
-package ar.com.tacs.web.rest;
+package ar.com.tacs.web.service;
 
 import static org.easymock.EasyMock.anyObject;
 import static org.easymock.EasyMock.expect;
@@ -8,6 +8,9 @@ import junit.framework.Assert;
 
 import org.apache.http.HttpEntity;
 import org.junit.Test;
+
+import ar.com.tacs.web.service.MercadoLibreService;
+import ar.com.tacs.web.service.RestConsumer;
 
 
 public class MercadoLibreServiceTest {

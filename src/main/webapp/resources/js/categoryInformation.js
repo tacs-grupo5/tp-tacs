@@ -17,14 +17,18 @@ function setBackLink(){
 }
 
 function createCategoryInfoTable(infoCategory){
-	
-	for(var i in infoCategory.children_categories){
-		var categoriesColumn = infoCategory.children_categories[i].name + ", ";
-		var url = $("#categoriesUrl").val() + infoCategory.children_categories[i].id;
-		var link = getLinkForUrl(url, infoCategory.children_categories[i].name);
-		var cantidadItems = infoCategory.children_categories[i].total_items_in_this_category;
-		appendRowToTable($("#categoryInfoTable"), createColumn(link) + createColumn(cantidadItems));		
-	}	
+	if(infoCategory.children_categories.length > 0){
+		for(var i in infoCategory.children_categories){
+			var categoriesColumn = infoCategory.children_categories[i].name + ", ";
+			var url = $("#categoriesUrl").val() + infoCategory.children_categories[i].id;
+			var link = getLinkForUrl(url, infoCategory.children_categories[i].name);
+			var cantidadItems = infoCategory.children_categories[i].total_items_in_this_category;
+			appendRowToTable($("#categoryInfoTable"), createColumn(link) + createColumn(cantidadItems));		
+		}
+	}else{
+		$("#categoryInfoTable").hide();
+		$("#title").html("No existen subCategorias para : " + infoCategory.name);
+	}
 	
 }
 

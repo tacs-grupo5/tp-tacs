@@ -1,4 +1,4 @@
-package ar.com.tacs.web.rest;
+package ar.com.tacs.web.service;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
