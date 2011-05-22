@@ -8,22 +8,21 @@
 <spring:url value="/resources" var="resourcesUrl" />
 <script type="text/javascript" src="${resourcesUrl}/js/jquery-1.5.1.min.js"></script>
 <script type="text/javascript" src="${resourcesUrl}/js/utils.js"></script>
-<script type="text/javascript" src="${resourcesUrl}/js/siteInformation.js"></script>
-
+<script type="text/javascript" src="${resourcesUrl}/js/categoryInformation.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
-	<input type="hidden" id="categoryInfoUrl" value='<spring:url value="/categories/" />' />
-	<input type="hidden" id="siteInfo" value='${siteInfo}' />
+	<input type="hidden" id="categoriesUrl" value='<spring:url value="/categories/" />' />
+	<input type="hidden" id="categoryInfo" value='${categoryInfo}' />
 	<h1 id="title"></h1>
-	<table id="siteInfoTable">
+	<table id="categoryInfoTable">
 		<tr>
-			<td>Categorias</td>
-			<td></td>
+			<td>Subcategorias</td>
+			<td>Cantidad de items</td>
 			<td></td>
 			<td></td>
 		</tr>
 	</table>
-	
 </body>
 </html>
+

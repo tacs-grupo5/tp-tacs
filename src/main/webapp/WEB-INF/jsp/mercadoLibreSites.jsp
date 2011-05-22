@@ -9,21 +9,19 @@
 <title>Tacs web application</title>
 <spring:url value="/resources" var="resourcesUrl" />
 <script type="text/javascript" src="${resourcesUrl}/js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="${resourcesUrl}/js/utils.js"></script>
 
 <script>
 	$(document).ready(function(){
 		var sites = eval('${sites}');
 		for(var i in sites){
-			$("#sitesTable").append('<tr><td>' + eval(sites[i]).id + 
-					'</td><td>'+ getLinkForUrl('<spring:url value="/site/' + eval(sites[i]).id +'"/>', eval(sites[i]).name) + '</td></tr>');
+			var idColumn = createColumn(eval(sites[i]).id);
+			var nameColumn = createColumn(getLinkForUrl('<spring:url value="/site/' + eval(sites[i]).id +'"/>', eval(sites[i]).name));
+			$("#sitesTable").append('<tr>' + idColumn + nameColumn + '</tr>');
 		}
 	});
 	
-	function getLinkForUrl(url, name){
-		var link = '<a href="' + url + '">' + name + '</a>';
-		return link;
-	}
-
+	
 </script>
 </head>
 

@@ -13,6 +13,7 @@ public class MercadoLibreController {
 
 	private static final String MERCADO_LIBRE_SITES_PAGE = "mercadoLibreSites";
 	private static final String INFO_SITE_PAGE = "siteInformation";
+	private static final String CATEGORY_PAGE = "categoryInformation";
 	
 	private MercadoLibreService mercadoLibreService = new MercadoLibreService();
 	
@@ -27,6 +28,13 @@ public class MercadoLibreController {
 			@PathVariable String idSite){
 		modelMap.addAttribute("siteInfo", mercadoLibreService.getSite(idSite));
 		return INFO_SITE_PAGE;
+	}
+	
+	@RequestMapping(value="/categories/{idCategory}")
+	public String getCategoryInfoPage(ModelMap modelMap,
+			@PathVariable String idCategory){
+		modelMap.addAttribute("categoryInfo", mercadoLibreService.getCategory(idCategory));
+		return CATEGORY_PAGE;
 	}
 	
 }

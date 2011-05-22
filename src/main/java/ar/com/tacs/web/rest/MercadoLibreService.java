@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 public class MercadoLibreService {
 	
 	private static final String MERCADO_LIBRE_SITES_URL = "https://api.mercadolibre.com/sites/";
-	private static final String SITE_URL = "https://api.mercadolibre.com/sites/";
-	
+	private static final String CATEGORIES_URL = "https://api.mercadolibre.com/categories/";
+		
 	private RestConsumer consumer;
 	
 	public MercadoLibreService() {
@@ -42,6 +42,15 @@ public class MercadoLibreService {
 		return entityString;
 	}
 	
+	public String getCategory(String idCategory){
+		String entityString = "";
+		HttpEntity entity = consumer.consume(CATEGORIES_URL + idCategory);
+		if(entity != null){
+			entityString = consumer.parseHTTPEntity(entity);
+		}
+		return entityString;
+	}
+	
 	protected void setConsumer(RestConsumer consumer) {
 		this.consumer = consumer;
 	}
@@ -51,7 +60,7 @@ public class MercadoLibreService {
 	}
 	
 	public static void main(String[] args) {
-		String response = new MercadoLibreService().getSite("MLA");
+		String response = new MercadoLibreService().getCategory("MLA5725");
 		System.out.println(response);
 	}
 }
