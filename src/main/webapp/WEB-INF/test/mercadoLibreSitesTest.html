@@ -38,6 +38,15 @@
 			equals($("#sitesTable tr").size(),2, "Table contains 1 row for each site");			
 			
 		});
-		
+		test("First row should be the id of the site", function() {
+			createSitesTable('[{"id":"MLA","name":"Argentina"}]');
+			equals($("#sitesTable tr:eq(0) td").html(), "MLA", "First row content is the id of the site");			
+			
+		});
+		test("Second row should be a link with the name of the site", function() {
+			createSitesTable('[{"id":"MLA","name":"Argentina"}]');
+			equals($("#sitesTable tr:eq(0) td:eq(1) a").html(), "Argentina", "Second row is a link with the name of the site");	
+			
+		});
 	});
 </script>

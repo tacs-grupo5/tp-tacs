@@ -9,7 +9,6 @@ $(document).ready(function(){
 });
 
 function createSitesTable(sitesInfo){
-	alert(sitesInfo);
 	var sites = $.parseJSON(sitesInfo);
 	
 	for(var i in sites){
