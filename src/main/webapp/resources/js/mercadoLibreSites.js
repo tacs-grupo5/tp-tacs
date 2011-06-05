@@ -5,11 +5,13 @@
 
 $(document).ready(function(){
 	setTitle("Sitios de Mercado Libre");
-	createSitesTable();
+	createSitesTable($("#sitesInfo").val());
 });
 
-function createSitesTable(){
-	var sites = $.parseJSON($("#sitesInfo").val());
+function createSitesTable(sitesInfo){
+	alert(sitesInfo);
+	var sites = $.parseJSON(sitesInfo);
+	
 	for(var i in sites){
 		var idColumn = createColumn(sites[i].id);
 		var nameColumn = createColumn(getLinkForUrl($("#siteUrl").val() + sites[i].id , sites[i].name));
