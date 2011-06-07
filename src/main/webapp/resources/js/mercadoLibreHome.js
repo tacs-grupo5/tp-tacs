@@ -69,7 +69,7 @@
             });
         },
         CategoriesFill: function ($, categories) {
-            var me = this;
+        	var me = this;
             var lista = $(".categories ul", me.node);
             lista.html("");
             $(categories).each(function () {
