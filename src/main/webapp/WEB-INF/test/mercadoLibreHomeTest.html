@@ -19,7 +19,7 @@
 				setTimeout(function() {  
 			        start(); 
 			        equals($(".paises ul li").size(),13, "13 paises loaded after 1 second");
-			    }, 1000);
+			    }, 2000);
 				
 			});	
 			
@@ -30,9 +30,23 @@
 				mlBrowser.RenderItem($, $(".items"), item);
 				equals($(".items li").size(), 1, "1 item rendered");
 				equals($(".items li h1").html(), "200 $", "Price label set");
-				equals($(".items li h2").html(), "Item test", "Item title set")
+				equals($(".items li h2").html(), "Item test", "Item title set");
 				
 			});		
+			
+			asyncTest("site change should empty item list and path", function(){
+				var site = {"id":"MLA", "name":"Argentina"};
+				var item = {"title": "item test"};
+				$(".items ul").html('<li>' + item.title + '</li>');
+				$(".path").html('Path text');
+				mlBrowser.SiteChanged($, site);
+				setTimeout(function() {  
+			        start(); 
+			        equals($(".path").html(), '', "path is empty after site change");
+			        equals($(".items").html(), '', "items is empty after site change");			        
+			    }, 1500);				
+				
+			});	
 			
 			
 			
@@ -54,5 +68,6 @@
 	<!-- 	divs para testing	  -->
 	<div class="paises" style="display:none;"></div>	
 	<div class="items" style="display:none;"></div>	 
+	<div class="path" style="display:none;"></div>	 
 </body>
 </html>
