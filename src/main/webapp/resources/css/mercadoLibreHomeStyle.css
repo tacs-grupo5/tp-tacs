@@ -1,0 +1,62 @@
+.header .box
+      {
+          height: 40px;
+      }
+      .search
+      {
+          min-width: 350px;
+      }
+      .categories .box
+      {
+          height: 450px;
+          min-width: 200px;
+          overflow-y: scroll;
+      }
+      .items .box
+      {
+          height: 450px;
+          overflow: hidden;
+      }
+      .items .listado
+      {
+          min-width: 360px;
+          margin: auto;
+      }
+      .items .listado li
+      {
+          padding: 3px;
+          display: block;
+          float: left;
+          width: 97px;
+          height: 100px;
+          vertical-align: middle;
+          text-align: center;
+      }
+      .items .listado li img
+      {
+          background-color: transparent;
+          display: block;
+          margin: auto;
+          width: 90px;
+          height: 70px;
+      }
+      .items .listado li h1
+      {
+          font-size: 10px;
+          margin: 0;
+          padding: 0;
+      }
+      .items .listado li h2
+      {
+          font-size: 8px;
+          margin: 0;
+          padding: 0;
+      }
+      .layer
+      {
+          font-size: 12px;
+      }
+      .layer a
+      {
+          color: Red;
+      }

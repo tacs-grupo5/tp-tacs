@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import ar.com.tacs.web.service.MercadoLibreService;
 
@@ -14,10 +15,18 @@ public class MercadoLibreController {
 	private static final String MERCADO_LIBRE_SITES_PAGE = "mercadoLibreSites";
 	private static final String INFO_SITE_PAGE = "siteInformation";
 	private static final String CATEGORY_PAGE = "categoryInformation";
+	private static final String MERCADO_LIBRE_HOME_PAGE = "mercadoLibreHome";
+
 	
 	private MercadoLibreService mercadoLibreService = new MercadoLibreService();
 	
+	
 	@RequestMapping(value="/")
+	public String getMercadoLibreHomePage(){		
+		return MERCADO_LIBRE_HOME_PAGE;
+	}
+	
+	@RequestMapping(value="/sites")
 	public String getMercadoLibreSitesPage(ModelMap modelMap){
 		modelMap.addAttribute("sites", mercadoLibreService.getMercadoLibreSites());
 		return MERCADO_LIBRE_SITES_PAGE;

@@ -59,8 +59,5 @@ public class MercadoLibreService {
 		return consumer;
 	}
 	
-	public static void main(String[] args) {
-		String response = new MercadoLibreService().getCategory("MLA5725");
-		System.out.println(response);
-	}
+	
 }
