@@ -12,15 +12,34 @@
 	<script>
 		$=jQuery;
 		$(document).ready(function(){
-			asyncTest("should render paises combo", function(){
+			
+			asyncTest("should render paises combo after 1 second", function(){
 				
 				mlBrowser.PaisesFill($);
 				setTimeout(function() {  
 			        start(); 
-			        equals($(".paises ul li").size(),13, "13 paises loaded after 2 seconds");
-			    }, 2000);
+			        equals($(".paises ul li").size(),13, "13 paises loaded after 1 second");
+			    }, 1000);
 				
-			});
+			});	
+			
+			test("should render items in list", function(){
+				expect(3);
+				var item = {"price":200, "currency_id":"$", "title":"Item test"};	
+				
+				mlBrowser.RenderItem($, $(".items"), item);
+				equals($(".items li").size(), 1, "1 item rendered");
+				equals($(".items li h1").html(), "200 $", "Price label set");
+				equals($(".items li h2").html(), "Item test", "Item title set")
+				
+			});		
+			
+			
+			
+				
+			
+			
+			
 		});
 	</script>
 </head>
@@ -32,6 +51,8 @@
 		 <ol id="qunit-tests"></ol>
 		 <div id="qunit-fixture">test markup, will be hidden</div>	
 		 
-	<div class="paises" style="display:none;"></div>	 
+	<!-- 	divs para testing	  -->
+	<div class="paises" style="display:none;"></div>	
+	<div class="items" style="display:none;"></div>	 
 </body>
 </html>

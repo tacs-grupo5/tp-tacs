@@ -108,7 +108,7 @@
             });
         },
         ItemsFill: function ($, results) {
-            var me = this;
+        	var me = this;
             var listado = $(".items .listado", me.node);
             $(".items .itemsCount", me.node).html("(" + me.lastSearchResult.paging.total.toString() + " resultados totales)");
             listado.html("");
