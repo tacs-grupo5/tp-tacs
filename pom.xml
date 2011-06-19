@@ -19,9 +19,22 @@
 				<version>7.3.1.v20110307</version>
 				<configuration>
 					<testClassesDirectory>conf/dev</testClassesDirectory> 
-					<useTestClasspath>true</useTestClasspath> 
+					<useTestClasspath>true</useTestClasspath>					
 				</configuration>
 			</plugin>
+			<plugin>
+                <groupId>net.kindleit</groupId>
+                <artifactId>maven-gae-plugin</artifactId>
+                <version>0.8.4</version>
+                <dependencies>
+                  <dependency>
+                    <groupId>net.kindleit</groupId>
+                    <artifactId>gae-runtime</artifactId>
+                    <version>1.5.0.1</version>
+                    <type>pom</type>
+                  </dependency>
+                </dependencies>
+            </plugin>
 		</plugins>	
 		
   </build>
@@ -83,6 +96,35 @@
 		<type>jar</type>
 		<scope>compile</scope>
 	</dependency>
+	<dependency>
+		<groupId>javax.jdo</groupId>
+		<artifactId>jdo-api</artifactId>
+		<version>3.0</version>
+		<type>jar</type>
+		<scope>compile</scope>
+	</dependency>
+	
+	<dependency>
+		<groupId>com.google.appengine</groupId>
+		<artifactId>appengine-java-sdk</artifactId>
+		<version>1.5.0.1</version>
+		<type>zip</type>
+		<scope>compile</scope>
+	</dependency>
+	<dependency>
+		<groupId>com.google.appengine</groupId>
+		<artifactId>appengine-api-1.0-sdk</artifactId>
+		<version>1.5.0.1</version>
+		<type>jar</type>
+		<scope>compile</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.tuckey</groupId>
+		<artifactId>urlrewritefilter</artifactId>
+		<version>3.1.0</version>
+		<type>jar</type>
+		<scope>compile</scope>
+	</dependency>
   </dependencies>
   <repositories>
   	<repository>
@@ -96,5 +138,8 @@
       <url>http://repository.springsource.com/maven/bundles/release</url>
     </repository>
   </repositories>
+  <properties>
+  	<gae.home>/home/hernan/Development/appengine-java-sdk-1.5.0.1/</gae.home>
+  </properties>
   
 </project>

@@ -4,7 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import ar.com.tacs.web.service.MercadoLibreService;
 
@@ -20,9 +19,8 @@ public class MercadoLibreController {
 	
 	private MercadoLibreService mercadoLibreService = new MercadoLibreService();
 	
-	
 	@RequestMapping(value="/")
-	public String getMercadoLibreHomePage(){		
+	public String getMercadoLibreHomePage(){
 		return MERCADO_LIBRE_HOME_PAGE;
 	}
 	

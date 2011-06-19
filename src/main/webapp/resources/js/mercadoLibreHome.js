@@ -143,8 +143,7 @@
             var url = "sites/" + me.site.id + "/search?" + query;
             me.mlSvc($, { url: url,
                 success: function (searchResult) {
-                	alert($(searchResult));
-                    me.lastSearchText = "";
+                	me.lastSearchText = "";
                     me.lastSearchResult = searchResult;
                     me.ItemsFill($, searchResult.results);
                 },
