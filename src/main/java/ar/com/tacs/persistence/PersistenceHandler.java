@@ -6,7 +6,7 @@ import javax.jdo.PersistenceManagerFactory;
 public class PersistenceHandler {
     @SuppressWarnings("static-access")
 	private static final PersistenceManagerFactory pmfInstance =
-        JDOHelper.getPersistenceManagerFactory();
+        JDOHelper.getPersistenceManagerFactory("transactions-optional");
 
     private PersistenceHandler() {}
 
