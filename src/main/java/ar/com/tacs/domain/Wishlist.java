@@ -11,7 +11,7 @@ import javax.jdo.annotations.PrimaryKey;
 
 import com.google.appengine.api.users.User;
 
-@PersistenceCapable(identityType=IdentityType.APPLICATION)
+@PersistenceCapable(identityType=IdentityType.DATASTORE)
 public class Wishlist {
 
 	@PrimaryKey
@@ -35,5 +35,21 @@ public class Wishlist {
 	
 	public void setItems(List<WishItem> items) {
 		this.items = items;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
+	}
+	
+	public User getAuthor() {
+		return author;
+	}
+	
+	public void setAuthor(User author) {
+		this.author = author;
 	}
 }

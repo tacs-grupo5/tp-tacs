@@ -7,7 +7,7 @@
   <name>tacs-web</name>
   
   <build>
-		<plugins>
+  		<plugins>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>tomcat-maven-plugin</artifactId>
@@ -35,7 +35,33 @@
                   </dependency>
                 </dependencies>
             </plugin>
-		</plugins>	
+			<plugin>
+				<groupId>org.datanucleus</groupId>
+				<artifactId>maven-datanucleus-plugin</artifactId>
+				<version>3.0.0-m2</version>
+				<configuration>
+					<verbose>true</verbose>
+					<enhancerName>ASM</enhancerName>
+					<api>JDO</api>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>enhance</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<compilerVersion>1.6</compilerVersion>
+				</configuration>
+			</plugin>
+  		</plugins>	
 		
   </build>
   <dependencies>
@@ -97,20 +123,12 @@
 		<scope>compile</scope>
 	</dependency>
 	<dependency>
-		<groupId>javax.jdo</groupId>
-		<artifactId>jdo-api</artifactId>
-		<version>3.0</version>
+		<groupId>org.tuckey</groupId>
+		<artifactId>urlrewritefilter</artifactId>
+		<version>3.1.0</version>
 		<type>jar</type>
 		<scope>compile</scope>
-	</dependency>
-	
-	<dependency>
-		<groupId>com.google.appengine</groupId>
-		<artifactId>appengine-java-sdk</artifactId>
-		<version>1.5.0.1</version>
-		<type>zip</type>
-		<scope>compile</scope>
-	</dependency>
+	</dependency>	
 	<dependency>
 		<groupId>com.google.appengine</groupId>
 		<artifactId>appengine-api-1.0-sdk</artifactId>
@@ -118,13 +136,30 @@
 		<type>jar</type>
 		<scope>compile</scope>
 	</dependency>
-	<dependency>
-		<groupId>org.tuckey</groupId>
-		<artifactId>urlrewritefilter</artifactId>
-		<version>3.1.0</version>
-		<type>jar</type>
-		<scope>compile</scope>
-	</dependency>
+	 <dependency>
+         <groupId>org.datanucleus</groupId>
+         <artifactId>datanucleus-core</artifactId>
+         <version>3.0.0-m5</version>
+     </dependency>
+     <dependency>
+         <groupId>org.datanucleus</groupId>
+         <artifactId>datanucleus-api-jdo</artifactId>
+         <version>3.0.0-m5</version>
+     </dependency>
+     <dependency>
+     	<groupId>javax.jdo</groupId>
+     	<artifactId>jdo-api</artifactId>
+     	<version>3.0</version>
+     	<type>jar</type>
+     	<scope>compile</scope>
+     </dependency>
+     <dependency>
+     	<groupId>javax.jdo</groupId>
+     	<artifactId>jdo</artifactId>
+     	<version>2.0-20050809.1515</version>
+     	<type>jar</type>
+     	<scope>compile</scope>
+     </dependency>
   </dependencies>
   <repositories>
   	<repository>
@@ -137,7 +172,19 @@
       <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
       <url>http://repository.springsource.com/maven/bundles/release</url>
     </repository>
+     <repository>
+        <id>DataNucleus_Repos2</id>
+        <name>DataNucleus Repository</name>
+        <url>http://www.datanucleus.org/downloads/maven2</url>
+    </repository>
+    <repository> <!-- Required for transaction-api transitive dep -->
+        <id>Java_Net_LEGACY</id>
+        <name>Java.Net legacy</name>
+        <url>http://download.java.net/maven/1/</url>
+        <layout>legacy</layout>
+    </repository>
   </repositories>
+  
   <properties>
   	<gae.home>/home/hernan/Development/appengine-java-sdk-1.5.0.1/</gae.home>
   </properties>

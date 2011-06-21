@@ -4,8 +4,9 @@ import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManagerFactory;
 
 public class PersistenceHandler {
-    private static final PersistenceManagerFactory pmfInstance =
-        JDOHelper.getPersistenceManagerFactory("transactions-optional");
+    @SuppressWarnings("static-access")
+	private static final PersistenceManagerFactory pmfInstance =
+        JDOHelper.getPersistenceManagerFactory();
 
     private PersistenceHandler() {}
 

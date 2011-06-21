@@ -157,7 +157,8 @@
             if (texto.length > 0) {
                 me.Search($, texto);
             }
-        }
+        }     
+        
     }
 
     jQuery.fn.mlBrowserInit = function () {
@@ -175,4 +176,5 @@
 
     jQuery(function ($) {
         $("#ml").mlBrowserInit();
-    });
+    });  
+		
